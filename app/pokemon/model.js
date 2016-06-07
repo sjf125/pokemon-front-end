@@ -22,5 +22,15 @@ export default Model.extend({
   spatk: attr('number'),
   spdef: attr('number'),
   speed: attr('number'),
-  image: attr('string')
+  image: attr('string'),
+  stats: Ember.computed('hp', 'attack', 'defense', 'spatk', 'spdef', 'speed', function() {
+    return [
+            {label: "HP", value: this.get('hp')},
+            {label: "Attack", value: this.get('attack')},
+            {label: "Defense", value: this.get('defense')},
+            {label: "Sp Atk", value: this.get('spatk')},
+            {label: "Sp Def", value: this.get('spdef')},
+            {label: "Speed", value: this.get('speed')}
+          ];
+  }),
 });
