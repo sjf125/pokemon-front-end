@@ -1,5 +1,5 @@
-<div class="well">
-<h2>{{pokemon.capname}}</h2>
+
+<h3>{{pokemon.capname}}</h3>
 
 <img src={{pokemon.image}} class="poke-img">
 
@@ -8,7 +8,9 @@
     <span class="{{pokemon.type2}}-type">{{pokemon.typetwo}}</span>
   </h4>
 
+  <!-- {{#link-to 'pokedexter-entry.entry.stats' pokemon.stats}}
+    <h5>display stats</h5>
+  {{/link-to}} -->
   <div class="chart-container">
     {{horizontal-bar-chart data=chartData}}
   </div>
-</div>  

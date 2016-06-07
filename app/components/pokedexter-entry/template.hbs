@@ -1,8 +1,8 @@
 
 <ul class="pokedex">
   {{#each model as |pokemon|}}
-    <li class="pokedex-tile">
-      {{pokedexter-entry/entry pokemon=pokemon}}
+    <li class="entry-tile" data.id={{pokemon.pokedex_id}}>
+      {{pokedexter-entry/entry pokemon=pokemon chartData=chartData}}
     </li>
   {{/each}}
 </ul>
