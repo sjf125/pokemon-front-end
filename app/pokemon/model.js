@@ -5,7 +5,6 @@ import { hasMany } from 'ember-data/relationships';
 export default Model.extend({
   name: attr('string'),
   hidden: attr('boolean'),
-  items: hasMany('item'),
   type1: attr('string'),
   type2: attr('string'),
   hp: attr('number'),

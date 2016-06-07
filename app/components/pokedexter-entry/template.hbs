@@ -1,0 +1,19 @@
+<h2>{{pokemon.name}}</h2>
+
+<img src={{pokemon.image}}>
+
+<ul>
+  <!-- {{#each pokemon.items as |item|}}
+    {{pokedexter-entry/item item=item}}
+  {{/each}} -->
+  <li>{{pokemon.type1}}</li>
+  <li>{{pokemon.type2}}</li>
+  <li>HP: {{pokemon.hp}}</li>
+  <li>Attack: {{pokemon.attack}}</li>
+  <li>Defense: {{pokemon.defense}}</li>
+  <li>Special Attack: {{pokemon.spatk}}</li>
+  <li>Special Defense: {{pokemon.spdef}}</li>
+  <li>Speed: {{pokemon.speed}}</li>
+</ul>
+
+<!-- {{pokedexter-entry pokemon=pokemon submit="addPokemon"}} -->
