@@ -1,1 +1,14 @@
-{{yield}}
+<div class="well">
+<h2>{{pokemon.capname}}</h2>
+
+<img src={{pokemon.image}} class="poke-img">
+
+  <h4>
+    <span class="{{pokemon.type1}}-type">{{pokemon.typeone}}</span>
+    <span class="{{pokemon.type2}}-type">{{pokemon.typetwo}}</span>
+  </h4>
+
+  <div class="chart-container">
+    {{horizontal-bar-chart data=chartData}}
+  </div>
+</div>  

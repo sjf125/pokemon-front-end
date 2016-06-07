@@ -1,23 +1,17 @@
-<h2>{{pokemon.capname}}</h2>
 
-<img src={{pokemon.image}} class="poke-img">
+<ul class="pokedex">
+  {{#each model as |pokemon|}}
+    <li class="pokedex-tile">
+      {{pokedexter-entry/entry pokemon=pokemon}}
+    </li>
+  {{/each}}
+</ul>
 
-  <!-- {{#each pokemon.items as |item|}}
-    {{pokedexter-entry/item item=item}}
-  {{/each}} -->
-  <h4>
-    <span class="{{pokemon.type1}}-type">{{pokemon.typeone}}</span>
-    <span class="{{pokemon.type2}}-type">{{pokemon.typetwo}}</span>
-  </h4>
-  <!-- <li>HP: {{pokemon.hp}}</li>
-  <li>Attack: {{pokemon.attack}}</li>
-  <li>Defense: {{pokemon.defense}}</li>
-  <li>Special Attack: {{pokemon.spatk}}</li>
-  <li>Special Defense: {{pokemon.spdef}}</li>
-  <li>Speed: {{pokemon.speed}}</li> -->
-  <div class="chart-container">
-    {{horizontal-bar-chart data=chartData}}
-  </div>
-
-<!-- selectedSeedColor="#2996cc" -->
 <!-- {{pokedexter-entry pokemon=pokemon submit="addPokemon"}} -->
+
+<!-- <li>HP: {{pokemon.hp}}</li>
+<li>Attack: {{pokemon.attack}}</li>
+<li>Defense: {{pokemon.defense}}</li>
+<li>Special Attack: {{pokemon.spatk}}</li>
+<li>Special Defense: {{pokemon.spdef}}</li>
+<li>Speed: {{pokemon.speed}}</li> -->
