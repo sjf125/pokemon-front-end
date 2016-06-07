@@ -1,0 +1,18 @@
+@import 'types';
+
+.poke-img {
+  background-color: #d4e5f6;
+  // border-left-color: red;
+  // border-top-color: red;
+  // border-right-color: #ffff00;
+  // border-bottom-color: #ffff00;
+  border-width: 5px;
+  border-radius: 20px;
+  height: 200px;
+  width: 200px;
+}
+
+.poke-img:hover {
+  border-color: yellow;
+  border-style: solid;
+}

@@ -36,6 +36,21 @@ $black: #000;
   width: 5em;
 }
 
+// .poke-image {
+//   background-color: gray;
+//   border-style: solid;
+//   border-left-color: red;
+//   border-top-color: red;
+//   border-right-color: #ffff00;
+//   border-bottom-color: #ffff00;
+//   border-width: 5px;
+//   border-radius: 20px;
+//   height: 200px;
+//   width: 200px;
+// }
+
+
+// Type lable styling
 
 .normal-type {
   @extend %type;
@@ -125,4 +140,9 @@ $black: #000;
 .fairy-type {
   @extend %type;
   background-color: $fairy;
+}
+
+.normal-type {
+  @extend %type;
+  background-color: $normal;
 }
