@@ -11,7 +11,7 @@ Router.map(function () {
   this.route('change-password');
   this.route('users');
   this.route('pokedex');
-  this.route('pokemon');
+  this.route('pokemon', { path: '/pokemon/:id'});
 });
 
 export default Router;

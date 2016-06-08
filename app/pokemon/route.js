@@ -5,10 +5,10 @@ export default Ember.Route.extend({
     return this.get('store').findRecord('pokemon', params.id);
   },
 
-  // actions: {
-  //   addPokemon (data) {
-  //     let pokemon = this.get('store').createRecord('pokemon', data);
-  //     return pokemon.save();
-  //   }
-  // }
+  actions: {
+    addPokemon (data) {
+      let pokemon = this.get('store').createRecord('pokemon', data);
+      return pokemon.save();
+    }
+  }
 });
