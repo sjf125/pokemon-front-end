@@ -12,6 +12,7 @@ Router.map(function () {
   this.route('users');
   this.route('pokedex');
   this.route('pokemon', { path: '/pokemon/:id'});
+  this.route('poketeam');
 });
 
 export default Router;

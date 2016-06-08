@@ -1,5 +1,8 @@
+<h2>Pokedex</h2>
 <ul class="pokedex">
   {{#each model as |pokemon|}}
     {{pokedexter-entry/entry pokemon=pokemon chartData=pokemon.stats}}
+  {{else}}
+      Uh oh!  There were no pokemon found!  There may have been a database or connection error.
   {{/each}}
 </ul>
