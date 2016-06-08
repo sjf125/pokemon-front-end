@@ -33,4 +33,5 @@ export default Model.extend({
             {label: "Speed", value: this.get('speed')}
           ];
   }),
+  pokedex_id: attr('number'),
 });

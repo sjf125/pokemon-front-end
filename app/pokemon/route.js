@@ -7,7 +7,7 @@ export default Ember.Route.extend({
 
   actions: {
     addPokemon (data) {
-      let pokemon = this.get('store').createRecord('pokemon', data);
+      let pokemon = this.get('store').createRecord('pokemon', data.pokedex_id);
       return pokemon.save();
     }
   }
