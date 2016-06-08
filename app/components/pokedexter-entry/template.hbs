@@ -6,7 +6,4 @@
 <span class="{{pokemon.type2}}-type">{{pokemon.typetwo}}</span> -->
 
 {{pokedexter-entry/entry/stats pokemon=pokemon}}
-
-<button type="button" class="btn btn-primary" data-id={{pokemon.pokedex_id}} {{action "addPokemon"}}>
-  Add to poketeam
-</button>
+{{pokedexter-entry/add-pokemon-btn pokemon=pokemon}}
