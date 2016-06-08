@@ -1,5 +1,10 @@
 li {
   list-style-type: none;
+  text-align: center;
+}
+
+h5 {
+  margin: 0 0 10px;
 }
 
 // .entry-header {
@@ -8,16 +13,8 @@ li {
 
 .entry-type {
   color: #fff;
-  font-size: 14px;
-  background-color: rgba(0,0,0,.5);
-  left: 0;
-  right: 0;
-  z-index: 20;
+  font-size: 1em;
   text-align: center;
-  position: absolute;
-  bottom: 0;
-  box-sizing: border-box;
-  width: 100%;
 }
 
 .entry-tile {
@@ -25,7 +22,6 @@ li {
 	padding: 10px;
 	background: #f9f9f9;
 	border: 1px solid #ddd;
-	font-size: 16px;
 	font-size: 1rem;
   margin: 0 0 2% 2%;
 	vertical-align: top;

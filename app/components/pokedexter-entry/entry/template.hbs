@@ -1,12 +1,10 @@
 
-<!-- <h3>{{pokemon.capname}}</h3> -->
-
+<h5>{{pokemon.capname}}</h5>
 <img src={{pokemon.image}} class="poke-img">
-
-<span class="entry-type">
-    <span class="{{pokemon.type1}}-type">{{pokemon.typeone}}</span>
-    <span class="{{pokemon.type2}}-type">{{pokemon.typetwo}}</span>
-</span>
+<!-- <span class="entry-type"> -->
+    <span class="entry-type {{pokemon.type1}}-type">{{pokemon.typeone}}</span>
+    <span class="entry-type {{pokemon.type2}}-type">{{pokemon.typetwo}}</span>
+<!-- </span> -->
   <!-- {{#link-to 'pokedexter-entry.entry.stats' pokemon.stats}}
     <h5>display stats</h5>
   {{/link-to}} -->
