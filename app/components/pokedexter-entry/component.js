@@ -6,4 +6,6 @@ export default Ember.Component.extend({
       this.sendAction('addPokemon', pokemon);
     }
   },
+
+  // tagName: 'li'
 });

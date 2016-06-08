@@ -1,17 +1,1 @@
-
-<ul class="pokedex">
-  {{#each model as |pokemon|}}
-    <li class="entry-tile" data.id={{pokemon.pokedex_id}}>
-      {{pokedexter-entry/entry pokemon=pokemon chartData=chartData}}
-    </li>
-  {{/each}}
-</ul>
-
-<!-- {{pokedexter-entry pokemon=pokemon submit="addPokemon"}} -->
-
-<!-- <li>HP: {{pokemon.hp}}</li>
-<li>Attack: {{pokemon.attack}}</li>
-<li>Defense: {{pokemon.defense}}</li>
-<li>Special Attack: {{pokemon.spatk}}</li>
-<li>Special Defense: {{pokemon.spdef}}</li>
-<li>Speed: {{pokemon.speed}}</li> -->
+{{pokedexter-entry/entry pokemon=pokemon chartData=chartData}}
