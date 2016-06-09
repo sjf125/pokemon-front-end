@@ -6,9 +6,17 @@ export default Ember.Component.extend({
   poketeam: storageFor('poketeam'),
 
   actions: {
-    addPokemon (pokemon) {
-      let log = this.get('pokemon');
-      console.log(log);
+    addPokemon () {
+      let store = this.get('store');
+      let poke = this.get('pokemon');
+      console.log(poke.get('name'));
+      store.createRecord('poketeam', poke);
+
+      // console.log(this.get('poketeam._initialContent'));
+      // this.get('poketeam._initialContent')
+      // this.get('poketeam').addObject(log);
+      console.log(this.get('poketeam'));
+      console.log(this.get('store'));
 
       // let poketeam = this.get('poketeam').get('id', result.user.id);
       // this.sendAction('addPokemon', pokemon);
