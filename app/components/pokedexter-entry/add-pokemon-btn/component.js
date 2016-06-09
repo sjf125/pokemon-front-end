@@ -8,8 +8,7 @@ export default Ember.Component.extend({
   actions: {
     addPokemon () {
       let store = this.get('store');
-      let poke = this.get('pokemon');
-      console.log(poke.get('name'));
+      let poke = this.get('pokemon.pokedex_id');
       store.createRecord('poketeam', poke);
 
       // console.log(this.get('poketeam._initialContent'));
