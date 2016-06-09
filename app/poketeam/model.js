@@ -1,11 +1,14 @@
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
+// import { belongsTo } from 'ember-data/relationships';
 
 export default Model.extend({
-  slot1: attr('number'),
-  slot2: attr('number'),
-  slot3: attr('number'),
-  slot4: attr('number'),
-  slot5: attr('number'),
-  slot6: attr('number'),
+  // user_id: belongsTo('user'),
+  user_id: attr('number'),
+  slot1: attr('string'),
+  slot2: attr('string'),
+  slot3: attr('string'),
+  slot4: attr('string'),
+  slot5: attr('string'),
+  slot6: attr('string'),
 });

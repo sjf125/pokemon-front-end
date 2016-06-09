@@ -2,23 +2,55 @@ import Ember from 'ember';
 import { storageFor } from 'ember-local-storage';
 
 export default Ember.Component.extend({
+  flashMessages: Ember.inject.service(),
   store: Ember.inject.service(),
+  auth: Ember.inject.service(),
   poketeam: storageFor('poketeam'),
 
   actions: {
     addPokemon () {
+      let uid = this.get('auth.credentials.id');
       let store = this.get('store');
-      let poke = this.get('pokemon.pokedex_id');
-      store.createRecord('poketeam', poke);
+      let thisPoke = this.get('pokemon.pokedex_id');
 
-      // console.log(this.get('poketeam._initialContent'));
-      // this.get('poketeam._initialContent')
-      // this.get('poketeam').addObject(log);
-      console.log(this.get('poketeam'));
-      console.log(this.get('store'));
+      store.queryRecord('poketeam', {})
+        .then(function(data) {
+          if (!data) {
+            this.get('flashMessages')
+              .success('You added your first Pokemon to your team!');
+            return store.createRecord('poketeam', { slot1: thisPoke }).save();
+          }
+          let team = [];
+          for (var i = 0; i < 6; i++) {
+            let slot = data.get(`slot${i}`);
+            if (slot) {
+              team.push(parseInt(slot));
+            }
+          }
+          console.log('old team: ' + team);
+          let newTeam = team;
+          if (team.length < 6) {
+            newTeam.push(thisPoke);
+            data.set('slot1', newTeam[0]);
+            data.set('slot2', newTeam[1]);
+            data.set('slot3', newTeam[2]);
+            data.set('slot4', newTeam[3]);
+            data.set('slot5', newTeam[4]);
+            data.set('slot6', newTeam[5]);
 
-      // let poketeam = this.get('poketeam').get('id', result.user.id);
-      // this.sendAction('addPokemon', pokemon);
+            data.save();
+            console.log('new team: ' + newTeam);
+          }
+          else {
+            console.log('Your team is full!  Remove a pokemon first');
+            this.get('flashMessages')
+              .warning('Your team is full!  Remove a pokemon first');
+          }
+      // }).then(function(team) {
+
+      }).catch(function() {
+        console.log('catch');
+      });
     }
   },
 });
