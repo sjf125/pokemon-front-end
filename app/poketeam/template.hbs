@@ -1,2 +1,5 @@
 <h2>Poketeam</h2>
-{{pokedexter-entry poketeam=model addPokemon="addPokemon"}}
+{{#each model as |pokemon|}}
+  {{pokedexter-entry poketeam=model}}
+{{/each}}
+<!-- addPokemon="addPokemon" removePokemon="removePokemon" pokemon="pokeFinder"-->

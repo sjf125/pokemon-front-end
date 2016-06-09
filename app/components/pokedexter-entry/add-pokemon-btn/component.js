@@ -11,7 +11,6 @@ export default Ember.Component.extend({
     addPokemon () {
       let store = this.get('store');
       let thisPoke = this.get('pokemon.pokedex_id');
-
       store.queryRecord('poketeam', {})
         .then(function(data) {
           if (!data) {
@@ -21,7 +20,7 @@ export default Ember.Component.extend({
           }
           let team = [];
           for (var i = 1; i <= 6; i++) {
-            let slot = data.get(`slot${i}`);          
+            let slot = data.get(`slot${i}`);
             if (slot) {
               team.push(parseInt(slot));
             }

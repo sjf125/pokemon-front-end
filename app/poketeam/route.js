@@ -3,5 +3,10 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   store: Ember.inject.service(),
 
-  // let slot1 = this.store.find('pokemon', { pokedex_id: params.pokedex_id} )
+  model() {
+    let poketeam = this.get('store').findAll('poketeam');
+    // .then(function(data) {console.log(data.get('slot1'));});
+
+    return poketeam;
+  }
 });
