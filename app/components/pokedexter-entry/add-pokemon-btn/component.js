@@ -9,7 +9,6 @@ export default Ember.Component.extend({
 
   actions: {
     addPokemon () {
-      let uid = this.get('auth.credentials.id');
       let store = this.get('store');
       let thisPoke = this.get('pokemon.pokedex_id');
 
@@ -21,8 +20,8 @@ export default Ember.Component.extend({
             return store.createRecord('poketeam', { slot1: thisPoke }).save();
           }
           let team = [];
-          for (var i = 0; i < 6; i++) {
-            let slot = data.get(`slot${i}`);
+          for (var i = 1; i <= 6; i++) {
+            let slot = data.get(`slot${i}`);          
             if (slot) {
               team.push(parseInt(slot));
             }
@@ -37,7 +36,6 @@ export default Ember.Component.extend({
             data.set('slot4', newTeam[3]);
             data.set('slot5', newTeam[4]);
             data.set('slot6', newTeam[5]);
-
             data.save();
             console.log('new team: ' + newTeam);
           }
