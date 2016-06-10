@@ -4,8 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ga-wdi-boston.ember-auth',
     environment: environment,
-    baseURL: '/pokedexter/',
-    locationType: 'hash',
+    baseURL: '/',
+    locationType: 'auto',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
