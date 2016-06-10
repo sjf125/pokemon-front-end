@@ -12,42 +12,53 @@ export default Ember.Component.extend({
       let store = this.get('store');
       let thisPoke = this.get('pokemon.pokedex_id');
       store.queryRecord('poketeam', {})
-        .then(function(data) {
-          if (!data) {
-            this.get('flashMessages')
-              .success('You added your first Pokemon to your team!');
-            return store.createRecord('poketeam', { slot1: thisPoke }).save();
-          }
-          let team = [];
-          for (var i = 1; i <= 6; i++) {
-            let slot = data.get(`slot${i}`);
-            if (slot) {
-              team.push(parseInt(slot));
-            }
-          }
-          console.log('old team: ' + team);
-          let newTeam = team;
-          if (team.length < 6) {
-            newTeam.push(thisPoke);
-            data.set('slot1', newTeam[0]);
-            data.set('slot2', newTeam[1]);
-            data.set('slot3', newTeam[2]);
-            data.set('slot4', newTeam[3]);
-            data.set('slot5', newTeam[4]);
-            data.set('slot6', newTeam[5]);
-            data.save();
-            console.log('new team: ' + newTeam);
-          }
-          else {
-            console.log('Your team is full!  Remove a pokemon first');
-            this.get('flashMessages')
-              .warning('Your team is full!  Remove a pokemon first');
-          }
-      // }).then(function(team) {
-
-      }).catch(function() {
-        console.log('catch');
+      .then(function(data) {
+        if (data) {
+          data.get('slot1');
+          console.log(data.get('slot1'));
+          data.set('slot1', thisPoke);
+          console.log('success? '+ data.get('slot1'));
+          data.save();
+        } else {
+          return store.createRecord('poketeam', { slot1: thisPoke }).save();
+        }
       });
+      //   .then(function(data) {
+      //     if (!data) {
+      //       this.get('flashMessages')
+      //         .success('You added your first Pokemon to your team!');
+      //       return store.createRecord('poketeam', { slot1: thisPoke }).save();
+      //     }
+      //     let team = [];
+      //     for (var i = 1; i <= 6; i++) {
+      //       let slot = data.get(`slot${i}`);
+      //       if (slot) {
+      //         team.push(slot);
+      //       }
+      //     }
+      //     console.log('old team: ' + team);
+      //     let newTeam = team;
+      //     if (team.length < 6) {
+      //       newTeam.push(thisPoke);
+      //       data.set('slot1', newTeam[0]);
+      //       data.set('slot2', newTeam[1]);
+      //       data.set('slot3', newTeam[2]);
+      //       data.set('slot4', newTeam[3]);
+      //       data.set('slot5', newTeam[4]);
+      //       data.set('slot6', newTeam[5]);
+      //       data.save();
+      //       console.log('new team: ' + newTeam);
+      //     }
+      //     else {
+      //       console.log('Your team is full!  Remove a pokemon first');
+      //       this.get('flashMessages')
+      //         .warning('Your team is full!  Remove a pokemon first');
+      //     }
+      // // }).then(function(team) {
+      //
+      // }).catch(function() {
+      //   console.log('catch');
+      // });
     }
   },
 });
