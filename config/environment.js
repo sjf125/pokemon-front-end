@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'ga-wdi-boston.ember-auth',
+    modulePrefix: 'pokedexter',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
