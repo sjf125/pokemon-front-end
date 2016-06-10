@@ -15,9 +15,9 @@ export default Ember.Component.extend({
       .then(function(data) {
         if (data) {
           data.get('slot1');
-          console.log(data.get('slot1'));
+          console.log('Your team before you clicked the button: #' + data.get('slot1'));
           data.set('slot1', thisPoke);
-          console.log('success? '+ data.get('slot1'));
+          console.log('You added pokemon #'+ data.get('slot1') + ' to your team!');
           data.save();
         } else {
           return store.createRecord('poketeam', { slot1: thisPoke }).save();

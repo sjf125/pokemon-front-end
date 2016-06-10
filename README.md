@@ -6,6 +6,7 @@ An app to explore and memorize pokemon.
 (pokedexter.png)
 
 [Mockup](https://app.moqups.com/sjf125/woZADwAU/edit/page/a465e1313)
+[Back-end repo](http://sjf125.github.io/pokemon-back-end/)
 
 ## General Approach
 

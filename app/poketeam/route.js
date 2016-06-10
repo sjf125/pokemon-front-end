@@ -5,7 +5,7 @@ export default Ember.Route.extend({
 
   model() {
     let store = this.get('store');
-    store.queryRecord('poketeam', {})
+    return store.queryRecord('poketeam', {})
     .then(function(data) {
       console.log(data.get('slot1'));
     let poke = data.get('slot1');
